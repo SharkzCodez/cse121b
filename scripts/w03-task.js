@@ -14,7 +14,7 @@ let addNumbers = function () {
     document.getElementById('#sum').value = sum = add (add1, add2);
 }
 
-document.getElementById('#addNumbers').addEventListener('click',addNumbers);
+document.querySelector('#addNumbers').addEventListener('click',addNumbers);
 
 
 /* Function Expression - Subtract Numbers */
