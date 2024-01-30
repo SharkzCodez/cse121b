@@ -11,7 +11,7 @@ let addNumbers = function () {
     const add2 = Number(document.querySelector('#add2').value);
 
 
-    document.getElementById('#sum').value = sum = add (add1, add2);
+    document.querySelector('#sum').value = sum = add (add1, add2);
 }
 
 document.querySelector('#addNumbers').addEventListener('click',addNumbers);
