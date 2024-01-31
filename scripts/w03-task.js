@@ -11,7 +11,7 @@ let addNumbers = function () {
     const add2 = Number(document.querySelector('#add2').value);
 
 
-    document.querySelector('#sum').value = sum = add (add1, add2);
+    document.querySelector('#sum').value = add (add1, add2);
 }
 
 document.querySelector('#addNumbers').addEventListener('click',addNumbers);
@@ -59,10 +59,10 @@ function divideNumbers () {
     const divisor = Number(document.querySelector('#add2').value);
 
 
-    document.getElementById('#quotient').value = quotient = divide (dividend, divisor);
+    document.querySelector('#quotient').value = divide (dividend, divisor);
 }
 
-document.getElementById('#divideNumbers').addEventListener('click', divideNumbers);
+document.querySelector('#divideNumbers').addEventListener('click', divideNumbers);
 
 /* Decision Structure */
 
