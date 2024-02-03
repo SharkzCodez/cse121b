@@ -50,23 +50,32 @@ document.querySelector('#multiplyNumbers').addEventListener('click', multiplyNum
 
 
 /* Open Function Use - Divide Numbers */
-function divide (number1, number2) {
-    return number1 / number2;
-}
+const divide = (number1, number2) => number1 / number2;
 
-function divideNumbers () {
-    const dividend = Number(document.querySelector('#add1').value);
-    const divisor = Number(document.querySelector('#add2').value);
+const divideNumbers = () => {
+    let dividend = Number(document.getElementById('#dividend').value);
+    let divisor = Number(document.getElementById('#divisor').value);
+    let quotient = divide(dividend, divisor);
+    document.getElementById('#quotient').value = quotient.toFixed(1);
 
 
-    document.querySelector('#quotient').value = divide (dividend, divisor);
 }
 
 document.querySelector('#divideNumbers').addEventListener('click', divideNumbers);
 
 /* Decision Structure */
+function getTotal() {
+    let subtotal = Number(document.getElementById('subtotal').value);
 
-/* I was unsure how to do this one, any advice would be greatly appreciated */
+    if (document.getElementById('member').checked) {
+        subtotal = subtotal - subtotal * 0.2;
+    }
+
+
+    document.getElementById('total').textContent = subtotal.toFixed(1);
+}
+
+document.getElementById('getTotal').addEventListener('click', getTotal);
 
 
 /* ARRAY METHODS - Functional Programming */
@@ -77,22 +86,27 @@ document.getElementById('array').innerHTML = numbersArray
 
 /* Output Odds Only Array */
 const odds = numbersArray.filter((number) => number % 2 === 1)
-document.getElementById('#odds').innerHTML = odds
+document.querySelector('#odds').innerHTML = odds
 
 /* Output Evens Only Array */
 const evens = numbersArray.filter((number) => number % 2 === 0)
-document.getElementById('#evens').innerHTML = evens
+document.querySelector('#evens').innerHTML = evens
 
 /* Output Sum of Org. Array */
 function sumReducer(sum, numbers) {
     return sum + numbers
 }
 let sum = numbersArray.reduce(sumReducer);
-document.querySelector('#sumOfArray').textContent = numbers;
+document.querySelector('#sumOfArray').textContent = sum;
 
 /* Output Multiplied by 2 Array */
-numbersArray.map(number => number * 2)
+const multiplied = numbersArray.map(number => number * 2)
+document.querySelector('#multiplied'). innerHTML = multiplied
 
 /* Output Sum of Multiplied by 2 Array */
 
-/* I was completely stumped on this task, but I would like to see about working through it */
+function multiplySum(sum2, numbers) {
+    return sum2 + numbers
+}
+let sum2 = numbersArray.reduce(multiplySum);
+document.querySelector('#sumOfMultiplied').textContent = sum2;
