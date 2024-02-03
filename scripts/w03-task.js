@@ -104,9 +104,11 @@ const multiplied = numbersArray.map(number => number * 2)
 document.querySelector('#multiplied'). innerHTML = multiplied
 
 /* Output Sum of Multiplied by 2 Array */
+const sumOfMultiplied = numbersArray.map(sum2 => sum2 * 2)
 
 function multiplySum(sum2, numbers) {
     return sum2 + numbers
 }
 let sum2 = numbersArray.reduce(multiplySum);
+
 document.querySelector('#sumOfMultiplied').textContent = sum2;
