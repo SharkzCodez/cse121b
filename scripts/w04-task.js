@@ -24,14 +24,72 @@ let myProfile = {
         'Studying/researching sharks and other marine animals',
         'Playing music'
     ],
-    placesLived: [
-        place = 'Dover, Delaware', 'Fairfield, California', 'Minot, North Dakota', 'San Antonio, Texas', 'Mittlebrun, Germany', 'Tampa, Florida', 'Songtan, South Korea', 'Alice, Texas',
-        length = '11 months', '10 months', '2 years', '4 years', '4 years', '4 years', '3 years', 'Current residence'
-    ]
+    placesLived: []
 }
 
+myProfile.placesLived.push(
+    {
+        place: 'Dover, Delaware',
+        length: '11 months'
 
+    }
+);
 
+myProfile.placesLived.push(
+    {
+        place: 'Fairfield, California',
+        length: '10 months'
+
+    }
+);
+
+myProfile.placesLived.push(
+    {
+        place: 'Minot, North Dakota',
+        length: '2 years'
+
+    }
+);
+
+myProfile.placesLived.push(
+    {
+        place: 'San Antonio, Texas',
+        length: '4 years'
+
+    }
+);
+
+myProfile.placesLived.push(
+    {
+        place: 'Mittlebrun, Germany',
+        length: '4 years'
+
+    }
+);
+
+myProfile.placesLived.push(
+    {
+        place: 'Tampa, Florida',
+        length: '4 years'
+
+    }
+);
+
+myProfile.placesLived.push(
+    {
+        place: 'Songtan, South Korea',
+        length: '3 years'
+
+    }
+);
+
+myProfile.placesLived.push(
+    {
+        place: 'Alice, Texas',
+        length: 'Current residence'
+
+    }
+);
 
 /* DOM Manipulation - Output */
 /* Name */
@@ -58,15 +116,11 @@ myProfile.hobbies.forEach(hobby => {
 });
 
 /* Places Lived DataList */
-myProfile.placesLived.place.forEach(place => {
-    let dt = document.createElement('dt');
-    dt.textContent = place;
-    document.querySelector('#places-lived').appendChild(dt);
-});
-
-myProfile.placesLived.length.forEach(length => {
-    let dd = document.createElement('dd');
-    dd.textContent = length;
-    document.querySelector('#places-lived').appendChild(dd);
-});
+let placesLived = document.getElementById('placesLived');
+for (place of placesLived) {
+    placesLived.innerHTML += '<dt>' + place + '<dt>';
+}
+for (length of placesLived) {
+    placesLived.innerHTML += '<dd>' + length + '<dd>';
+}
 
