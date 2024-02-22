@@ -55,18 +55,28 @@ function divide (number1, number2) {
 }
 
 function divideNumbers () {
-    let dividend = Number(document.querySelector('#dividend').value);
-    let divisor = Number(document.querySelector('#divisor').value);
+    const dividend = Number(document.querySelector('#add1').value);
+    const divisor = Number(document.querySelector('#add2').value);
 
 
-    document.querySelector('#quotient').value = divide(dividend, divisor);
+    document.querySelector('#quotient').value = divide (dividend, divisor);
 }
 
 document.querySelector('#divideNumbers').addEventListener('click', divideNumbers);
 
 /* Decision Structure */
+function getTotal() {
+    let subtotal = Number(document.getElementById('subtotal').value);
 
-/* I was unsure how to do this one, any advice would be greatly appreciated */
+    if (document.getElementById('member').checked) {
+        subtotal = subtotal - subtotal * 0.2;
+    }
+
+
+    document.getElementById('total').textContent = subtotal.toFixed(1);
+}
+
+document.getElementById('getTotal').addEventListener('click', getTotal);
 
 
 /* ARRAY METHODS - Functional Programming */
@@ -88,11 +98,18 @@ function sumReducer(sum, numbers) {
     return sum + numbers
 }
 let sum = numbersArray.reduce(sumReducer);
-document.querySelector('#sumOfArray').textContent = numbers;
+document.querySelector('#sumOfArray').textContent = sum;
 
 /* Output Multiplied by 2 Array */
-numbersArray.map(number => number * 2)
+const multiplied = numbersArray.map(number => number * 2)
+document.querySelector('#multiplied'). innerHTML = multiplied
 
 /* Output Sum of Multiplied by 2 Array */
+const sumOfMultiplied = numbersArray.map(sum2 => sum2 * 2)
 
-/* I was completely stumped on this task, but I would like to see about working through it */
+function multiplySum(sum2, numbers) {
+    return sum2 + numbers
+}
+let sum2 = numbersArray.reduce(multiplySum);
+
+document.querySelector('#sumOfMultiplied').textContent = sum2;
