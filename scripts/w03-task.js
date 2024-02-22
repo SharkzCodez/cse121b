@@ -55,11 +55,11 @@ function divide (number1, number2) {
 }
 
 function divideNumbers () {
-    const dividend = Number(document.querySelector('#add1').value);
-    const divisor = Number(document.querySelector('#add2').value);
+    let dividend = Number(document.querySelector('#dividend').value);
+    let divisor = Number(document.querySelector('#divisor').value);
 
 
-    document.querySelector('#quotient').value = divide (dividend, divisor);
+    document.querySelector('#quotient').value = divide(dividend, divisor);
 }
 
 document.querySelector('#divideNumbers').addEventListener('click', divideNumbers);
@@ -77,11 +77,11 @@ document.getElementById('array').innerHTML = numbersArray
 
 /* Output Odds Only Array */
 const odds = numbersArray.filter((number) => number % 2 === 1)
-document.getElementById('#odds').innerHTML = odds
+document.querySelector('#odds').innerHTML = odds
 
 /* Output Evens Only Array */
 const evens = numbersArray.filter((number) => number % 2 === 0)
-document.getElementById('#evens').innerHTML = evens
+document.querySelector('#evens').innerHTML = evens
 
 /* Output Sum of Org. Array */
 function sumReducer(sum, numbers) {
